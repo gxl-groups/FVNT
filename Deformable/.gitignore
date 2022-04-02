@@ -3,3 +3,4 @@
 _ext*
 __pycache__
 build
+.DS_Store

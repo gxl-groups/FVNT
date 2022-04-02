@@ -1,44 +1,63 @@
-# FVNT
-## [DataSet](https://pan.baidu.com/s/1ik27IF56ZK50bUmuu3WTCg?pwd=3m9y)  [Model](https://pan.baidu.com/s/1eHe85WQqhtwcmmeNR1V4AQ?pwd=u4v5)
-> Download the dataset and place it in the ./dataset;
-> Download the model and place it in the ./model.
-## Prerequisites
-- env1: 
-    - torch 1.4.0 + cu92
-    - RTX 2080ti
-- env2:
-    - torch 1.1.0
-    - TitanXP
-## Getting Started
+# FVNT:A Flow-based Generative Network for Photo-Realistic Virtual Try-On
 
-### Installing
--  **Install Deformable Conv**
-    
-    > sh ./Deformable/make.sh
+![image.png](https://note.youdao.com/yws/res/18505/WEBRESOURCE65fe01a0026ce543eb03070a609a85e1)
 
-### Train
--  **Train Stage 1**
-   
-    > python train_viton_stage_1.py
--  **Train Stage 2**
-   
-    > python train_viton_stage_2.py
--  Train Stage 3
-   
-    > python train_viton_stage_3.py
+## Introduction
 
-### Test
-- For some reason, in our experiments, we trained the model of Stage1 on env1 and the models of Stage2 and Stage3 on env2. We tried to get the final results of the pre-trained model of Stage1 in env2 environment with Stage2 and Stage3, but found that the results would be worse due to the fact that the training environment of Stage1 is not env2. So, we first got the parsing needed for testing in env1 and saved it for subsequent use. These data can be found in our dataset.
-- Test cross pair:To show the qualitative results, we use the same pair as cpvton.
-  
-    > python test.py 
-- Test self pair:To calculate the various metrics, we use the same pair as cpvton+.
-  
-    > python test.py --file_path test_pairs_self.txt --generate_parsing generate_parsing_self
+In this paper,we propose a novel Flow-based Virtual Try-on Network (FVTN). It consists of three modules. Firstly, the Parsing Alignment Module (PAM) aligns the source clothing to the target person at the semantic level by predicting a semantic parsing map. Secondly, the Flow Estimation Module (FEM) learns a robust clothing deformation model by estimating multi-scale dense flow fields in an unsupervised fashion. Thirdly, the Fusion and Rendering Module (FRM) synthesizes the final try-on image by effectively integrating the warped clothing features and human body features.
 
-​    
+# Prerequisites
 
+- Enviroment1(env1): 
+  - pytorch 1.4.0
+  - numpy
+  - torchvision
+  - RTX 2080ti
+- Enviroment2(env2):
+  - pytorch 1.1.0
+  - numpy
+  - torchvision
+  - Deformable Conv
+  - TitanXP
 
+# Getting Started
 
+## Installing
 
+- Install Deformable Conv `sh ./Deformable/make.sh` 
 
+## Data Preperation
+
+We provide our **dataset files**  for convience. Download the models below and put it under `dataset/`
+
+- Download the VITON dataset from [here](https://pan.baidu.com/s/1ik27IF56ZK50bUmuu3WTCg?pwd=3m9y) .
+
+## Train the model
+
+- Train PAM `python train_viton_stage_1.py`
+- Train FEM `python train_viton_stage_2.py`
+- Train FRM `python train_viton_stage_3.py` 
+
+## Test the model
+
+- For some reason, in our experiments, we trained the model of PAM on env1 and the models of FEM and FRM on env2. We tried to get the final results of the pre-trained model of PAM in env2 environment with FEM and FRM, but found that the results would be worse due to the fact that the training environment of PAM is not env2. So, we first got the parsing needed for testing in env1 and saved it for subsequent use. These data can be found in our [dataset](https://pan.baidu.com/s/1ik27IF56ZK50bUmuu3WTCg?pwd=3m9y).
+- Test cross pair:To show the qualitative results, we use the same pair as cpvton.`python test.py `
+- Test self pair:To calculate the various metrics, we use the same pair as cpvton+.`python test.py --file_path test_pairs_self.txt --generate_parsing generate_parsing_self`
+
+## Pretrained models
+
+Download the **models** below and put it under `model/`
+
+- Download pretrained models from [here](https://pan.baidu.com/s/1eHe85WQqhtwcmmeNR1V4AQ?pwd=u4v5).
+
+## Example Results
+
+![image.png](https://note.youdao.com/yws/res/18507/WEBRESOURCEf1f71b41a1e66332afc4a9dae41cbe8c)
+
+## Citation
+
+If any part of our paper and code is helpful to your work, please generously cite with:
+
+```
+
+```

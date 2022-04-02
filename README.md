@@ -1,6 +1,6 @@
 # FVNT:A Flow-based Generative Network for Photo-Realistic Virtual Try-On
 
-![image.png](https://note.youdao.com/yws/res/18505/WEBRESOURCE65fe01a0026ce543eb03070a609a85e1)
+![image1.png](https://github.com/gxl-groups/FVNT/blob/main/pics/1.jpg)
 
 ## Introduction
 
@@ -52,7 +52,7 @@ Download the **models** below and put it under `model/`
 
 ## Example Results
 
-![image.png](https://note.youdao.com/yws/res/18507/WEBRESOURCEf1f71b41a1e66332afc4a9dae41cbe8c)
+![image2.png](https://github.com/gxl-groups/FVNT/blob/main/pics/2.jpg)
 
 ## Citation
 

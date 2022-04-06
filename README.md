@@ -1,4 +1,4 @@
-# FVNT:A Flow-based Generative Network for Photo-Realistic Virtual Try-On
+# A Flow-based Generative Network for Photo-Realistic Virtual Try-On
 
 ![image1.png](https://github.com/gxl-groups/FVNT/blob/main/pics/1.jpg)
 

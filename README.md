@@ -40,7 +40,7 @@ We provide our **dataset files**  for convience. Download the models below and p
 
 ## Test the model
 
-- For some reason, in our experiments, we trained the model of PAM on env1 and the models of FEM and FRM on env2. We tried to get the final results of the pre-trained model of PAM in env2 environment with FEM and FRM, but found that the results would be worse due to the fact that the training environment of PAM is not env2. So, we first got the parsing needed for testing in env1 and saved it for subsequent use. These data can be found in our [dataset](https://pan.baidu.com/s/1ik27IF56ZK50bUmuu3WTCg?pwd=3m9y).
+- We trained the model of PAM on env1 and the models of FEM and FRM on env2. We first got the parsing needed for testing in env1 and saved it for subsequent use. These semantic parsing maps can be found in this [dataset](https://pan.baidu.com/s/1ik27IF56ZK50bUmuu3WTCg?pwd=3m9y).
 - Test cross pair:To show the qualitative results, we use the same pair as cpvton.`python test.py `
 - Test self pair:To calculate the various metrics, we use the same pair as cpvton+.`python test.py --file_path test_pairs_self.txt --generate_parsing generate_parsing_self`
 

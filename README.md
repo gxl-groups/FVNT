@@ -2,8 +2,6 @@
 
 ![image1.png](https://github.com/gxl-groups/FVNT/blob/main/pics/1.jpg)
 
-## Introduction
-
 In this paper,we propose a novel Flow-based Virtual Try-on Network (FVTN). It consists of three modules. Firstly, the Parsing Alignment Module (PAM) aligns the source clothing to the target person at the semantic level by predicting a semantic parsing map. Secondly, the Flow Estimation Module (FEM) learns a robust clothing deformation model by estimating multi-scale dense flow fields in an unsupervised fashion. Thirdly, the Fusion and Rendering Module (FRM) synthesizes the final try-on image by effectively integrating the warped clothing features and human body features.
 
 # Prerequisites
@@ -53,11 +51,3 @@ Download the **models** below and put it under `model/`
 ## Example Results
 
 ![image2.png](https://github.com/gxl-groups/FVNT/blob/main/pics/2.jpg)
-
-## Citation
-
-If any part of our paper and code is helpful to your work, please generously cite with:
-
-```
-
-```
